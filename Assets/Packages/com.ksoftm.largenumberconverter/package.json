@@ -1,6 +1,6 @@
 {
   "name": "com.ksoftm.largenumberconverter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Large Number Converter",
   "description": "A Unity package for converting and formatting large numbers.",
   "unity": "2020.3",
@@ -24,6 +24,11 @@
       "displayName": "Large Number Converter Example",
       "description": "A sample scene demonstrating how to use the Large Number Converter.",
       "path": "Samples/LargeNumberConverterExample"
+    },
+    {
+      "displayName": "Large Number Player Manager",
+      "description": "A sample scene demonstrating how to use the Large Number Converter.",
+      "path": "Samples/LargeNumberPlayerManager"
     }
   ]
 }
