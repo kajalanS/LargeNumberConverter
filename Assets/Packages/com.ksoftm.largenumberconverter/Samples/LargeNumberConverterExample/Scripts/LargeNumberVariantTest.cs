@@ -1,4 +1,4 @@
-namespace Ksoftm.LargeNumberConverter.Sample
+namespace Ksoftm.LargeNumberConverter.Sample.LargeNumberConverterExample
 {
   using UnityEngine;
   using Ksoftm.LargeNumberConverter;

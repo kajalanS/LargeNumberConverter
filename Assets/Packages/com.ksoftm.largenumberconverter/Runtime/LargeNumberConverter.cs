@@ -108,5 +108,10 @@ namespace Ksoftm.LargeNumberConverter
       string numberText = truncated.ToString("0.###", CultureInfo.InvariantCulture);
       return string.IsNullOrEmpty(name) ? numberText : $"{numberText} {name}";
     }
+
+    public static bool TryGetSuffixExponent(string suffix, out int exponent)
+    {
+      return SuffixExponents.TryGetValue(suffix, out exponent);
+    }
   }
 }

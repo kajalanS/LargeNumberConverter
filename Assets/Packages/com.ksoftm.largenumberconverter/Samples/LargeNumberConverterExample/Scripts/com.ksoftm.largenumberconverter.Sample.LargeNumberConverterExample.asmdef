@@ -1,5 +1,5 @@
 {
-    "name": "com.ksoftm.largenumberconverter.Sample",
+    "name": "com.ksoftm.largenumberconverter.Sample.LargeNumberConverterExample",
     "rootNamespace": "",
     "references": [
         "GUID:b1e6b7acc92b1cc40a74ce91d58a5a4b"
