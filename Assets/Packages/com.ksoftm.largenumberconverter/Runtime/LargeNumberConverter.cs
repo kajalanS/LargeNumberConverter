@@ -8,6 +8,7 @@ namespace Ksoftm.LargeNumberConverter
 
   /// <summary>
   /// Provides methods to parse and format large numbers using short-scale suffixes and "illion" names.
+  /// MySQL datatype: DECIMAL(65,30) for BigInteger
   /// </summary>
   public static class LargeNumberConverter
   {
@@ -49,7 +50,7 @@ namespace Ksoftm.LargeNumberConverter
     /// <summary>
     /// Parses a string like "12.5 aa" or "3.2 M" into a BigInteger.
     /// </summary>
-    public static BigInteger Parse(string input)
+    public static BigInteger Parse(this string input)
     {
       if (string.IsNullOrWhiteSpace(input))
         throw new ArgumentException("Input cannot be empty.", nameof(input));
@@ -68,7 +69,7 @@ namespace Ksoftm.LargeNumberConverter
     /// <summary>
     /// Formats a BigInteger into short form (e.g. 1250 → "1.25k").
     /// </summary>
-    public static string ToShortString(BigInteger value)
+    public static string ToShortString(this BigInteger value)
     {
       if (value.IsZero)
         return "0";
@@ -93,7 +94,7 @@ namespace Ksoftm.LargeNumberConverter
     /// Converts a BigInteger into words using "illion" names.
     /// Groups beyond predefined names use "10^###" notation.
     /// </summary>
-    public static string ToIllionText(BigInteger value)
+    public static string ToIllionText(this BigInteger value)
     {
       if (value.IsZero)
         return "zero";

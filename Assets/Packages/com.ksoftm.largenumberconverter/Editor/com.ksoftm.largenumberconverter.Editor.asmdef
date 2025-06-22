@@ -1,0 +1,18 @@
+{
+    "name": "com.ksoftm.largenumberconverter.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b1e6b7acc92b1cc40a74ce91d58a5a4b"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -10,10 +10,18 @@
     "url": "https://ksoftm.com"
   },
   "license": "MIT",
+  "type": "library",
   "keywords": [
     "unity",
     "large number",
     "converter",
     "formatting"
+  ],
+  "samples": [
+    {
+      "displayName": "Large Number Converter Example",
+      "description": "A sample scene demonstrating how to use the Large Number Converter.",
+      "path": "Samples/LargeNumberConverterExample"
+    }
   ]
 }
