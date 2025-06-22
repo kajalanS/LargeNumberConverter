@@ -9,6 +9,8 @@
     "email": "admin@ksoftm.com",
     "url": "https://ksoftm.com"
   },
+  "category": "Scripting",
+  "dependencies": {},
   "license": "MIT",
   "type": "library",
   "keywords": [
