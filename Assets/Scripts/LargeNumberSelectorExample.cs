@@ -1,3 +1,4 @@
+using Ksoftm.LargeNumberConverter;
 using UnityEngine;
 /// <summary>
 /// Example MonoBehaviour using the selector:
@@ -5,7 +6,7 @@ using UnityEngine;
 public class LargeNumberSelectorExample : MonoBehaviour
 {
   [LargeNumberSelector(showIllionForm: true)]
-  public string ValueText = "1.23 M";
+  public string ValueText = "1 k";
 
   void Start()
   {

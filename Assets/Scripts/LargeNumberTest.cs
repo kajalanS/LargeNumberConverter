@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Numerics;
+using Ksoftm.LargeNumberConverter;
 
 public class LargeNumberTest : MonoBehaviour
 {

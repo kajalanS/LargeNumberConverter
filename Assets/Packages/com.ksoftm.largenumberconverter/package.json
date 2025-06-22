@@ -1,0 +1,19 @@
+{
+  "name": "com.ksoftm.largenumberconverter",
+  "version": "1.0.0",
+  "displayName": "Large Number Converter",
+  "description": "A Unity package for converting and formatting large numbers.",
+  "unity": "2020.3",
+  "author": {
+    "name": "KSoftM",
+    "email": "admin@ksoftm.com",
+    "url": "https://ksoftm.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "unity",
+    "large number",
+    "converter",
+    "formatting"
+  ]
+}
