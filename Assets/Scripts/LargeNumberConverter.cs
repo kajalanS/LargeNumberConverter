@@ -10,7 +10,7 @@ using UnityEngine;
 public static class LargeNumberConverter
 {
   // Extended suffix list for short-scale and Conway–Guy "illion" names (preserved from original)
-  private static readonly IReadOnlyList<string> Suffixes = new List<string>
+  public static readonly IReadOnlyList<string> Suffixes = new List<string>
     {
         "", "k", "M", "B", "T", "Q", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az",
         "ba", "bb", "bc", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bk", "bl", "bm", "bn", "bo", "bp", "bq", "br", "bs", "bt", "bu", "bv", "bw", "bx", "by", "bz",
@@ -21,7 +21,7 @@ public static class LargeNumberConverter
   private static readonly Dictionary<string, int> SuffixExponents;
 
   // Illion names up to centillion
-  private static readonly IReadOnlyList<string> IllionNames = new[] {
+  public static readonly IReadOnlyList<string> IllionNames = new[] {
         "", "thousand", "million", "billion", "trillion", "quadrillion",
         "quintillion", "sextillion", "septillion", "octillion", "nonillion",
         "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion",
@@ -79,7 +79,12 @@ public static class LargeNumberConverter
     decimal truncated = (decimal)abs / (decimal)divisor;
 
     string formatted = truncated.ToString("0.###", CultureInfo.InvariantCulture);
-    return (value.Sign < 0 ? "-" : string.Empty) + formatted + Suffixes[group];
+    string suffix = Suffixes[group];
+
+    // Insert a space if there's a non-empty suffix
+    return (value.Sign < 0 ? "-" : string.Empty)
+         + formatted
+         + (string.IsNullOrEmpty(suffix) ? string.Empty : " " + suffix);
   }
 
   /// <summary>
