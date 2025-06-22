@@ -5,7 +5,7 @@ namespace Ksoftm.LargeNumberConverter
   using System.Linq;
   using System.Numerics;
 
-  public static class BigIntegerExtensions
+  public static partial class LargeNumberConverter
   {
     #region Math Helpers
     /// <summary>
@@ -93,7 +93,7 @@ namespace Ksoftm.LargeNumberConverter
     public static BigInteger Add(this string inputWithSuffix, BigInteger toAdd)
     {
       var baseValue = inputWithSuffix.ParseWithSuffix();
-      return BigInteger.Add(baseValue, toAdd);  // Use Add method :contentReference[oaicite:1]{index=1}
+      return BigInteger.Add(baseValue, toAdd);
     }
 
     /// <summary>
@@ -108,6 +108,15 @@ namespace Ksoftm.LargeNumberConverter
     public static string AddToShortForm(this string inputWithSuffix, BigInteger toAdd)
     {
       var sum = inputWithSuffix.Add(toAdd);
+      return LargeNumberConverter.ToShortString(sum);
+    }
+
+    /// <summary>
+    /// Adds a numeric value to a suffix-formatted string and returns the result as short-form string.
+    /// </summary>
+    public static string AddToShortForm(this string inputWithSuffix, string toAdd)
+    {
+      var sum = inputWithSuffix.Add(toAdd.Parse());
       return LargeNumberConverter.ToShortString(sum);
     }
 
@@ -128,12 +137,39 @@ namespace Ksoftm.LargeNumberConverter
       var sum = a.ParseWithSuffix() + b.ParseWithSuffix();
       return LargeNumberConverter.ToShortString(sum);
     }
+
+    /// <summary>
+    /// Adds two suffix-formatted strings and returns the sum as short-form.
+    /// </summary>
+    public static BigInteger Add(this BigInteger a, string b)
+    {
+      return a + b.ParseWithSuffix();
+    }
+
+    /// <summary>
+    /// Subtracts a BigInteger from a suffix-formatted string and returns short-form.
+    /// </summary>
+    public static string Subtract(this string inputWithSuffix, string toSubtract)
+    {
+      var result = inputWithSuffix.ParseWithSuffix() - toSubtract.ParseWithSuffix();
+      return result.ToShortForm();
+    }
+
     /// <summary>
     /// Subtracts a BigInteger from a suffix-formatted string and returns short-form.
     /// </summary>
     public static string Subtract(this string inputWithSuffix, BigInteger toSubtract)
     {
       var result = inputWithSuffix.ParseWithSuffix() - toSubtract;
+      return result.ToShortForm();
+    }
+
+    /// <summary>
+    /// Multiply suffix-formatted string by a BigInteger and return short-form.
+    /// </summary>
+    public static string Multiply(this string inputWithSuffix, string multiplier)
+    {
+      var result = inputWithSuffix.ParseWithSuffix() * multiplier.ParseWithSuffix();
       return result.ToShortForm();
     }
 

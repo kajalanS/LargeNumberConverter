@@ -10,7 +10,7 @@ namespace Ksoftm.LargeNumberConverter
   /// Provides methods to parse and format large numbers using short-scale suffixes and "illion" names.
   /// MySQL datatype: DECIMAL(65,30) for BigInteger
   /// </summary>
-  public static class LargeNumberConverter
+  public static partial class LargeNumberConverter
   {
     // Extended suffix list for short-scale and Conway–Guy "illion" names (preserved from original)
     public static readonly IReadOnlyList<string> Suffixes = new List<string>
@@ -18,7 +18,6 @@ namespace Ksoftm.LargeNumberConverter
         "", "k", "M", "B", "T", "Q", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az",
         "ba", "bb", "bc", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bk", "bl", "bm", "bn", "bo", "bp", "bq", "br", "bs", "bt", "bu", "bv", "bw", "bx", "by", "bz",
         "ca", "cb", "cc", "cd", "ce", "cf", "cg", "ch", "ci", "cj", "ck", "cl", "cm", "cn", "co", "cp", "cq", "cr", "cs", "ct", "cu", "cv", "cw", "cx", "cy", "cz",
-        // Continue as needed...
     };
 
     private static readonly Dictionary<string, int> SuffixExponents;
@@ -29,7 +28,7 @@ namespace Ksoftm.LargeNumberConverter
         "quintillion", "sextillion", "septillion", "octillion", "nonillion",
         "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion",
         "quindecillion", "sexdecillion", "septendecillion", "octodecillion", "novemdecillion",
-        "vigintillion", /* ... up to centillion */ "centillion"
+        "vigintillion", "centillion"
     };
 
     static LargeNumberConverter()
@@ -67,7 +66,7 @@ namespace Ksoftm.LargeNumberConverter
     }
 
     /// <summary>
-    /// Formats a BigInteger into short form (e.g. 1250 → "1.25k").
+    /// Formats a BigInteger into short form (e.g. 1250 → "1.25 k").
     /// </summary>
     public static string ToShortString(this BigInteger value)
     {
