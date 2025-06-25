@@ -1,20 +1,21 @@
 namespace Ksoftm.LargeNumberConverter
 {
-  using System;
-  using UnityEngine;
-  /// <summary>
-  /// Attribute to mark numeric string fields that should be parsed/formatted by LargeNumberConverter.
-  /// </summary>
-  [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-  public class LargeNumberAttribute : PropertyAttribute
-  {
-    public bool ShowShortForm;
-    public bool ShowIllionForm;
+    using System;
+    using UnityEngine;
 
-    public LargeNumberAttribute(bool showShortForm = true, bool showIllionForm = false)
+    /// <summary>
+    /// Attribute to mark numeric string fields that should be parsed/formatted by LargeNumberConverter.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
+    public class LargeNumberAttribute : PropertyAttribute
     {
-      ShowShortForm = showShortForm;
-      ShowIllionForm = showIllionForm;
+        public readonly bool ShowShortForm;
+        public readonly bool ShowIllionForm;
+
+        public LargeNumberAttribute(bool showShortForm = true, bool showIllionForm = false)
+        {
+            ShowShortForm = showShortForm;
+            ShowIllionForm = showIllionForm;
+        }
     }
-  }
 }
