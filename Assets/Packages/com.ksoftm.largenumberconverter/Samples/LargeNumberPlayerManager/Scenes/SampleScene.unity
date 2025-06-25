@@ -165,7 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshCoins: {fileID: 1043699773}
   playerStates:
-    coins: 0
+    Coins:
+      valueString: 0
 --- !u!1 &253178818
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +243,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
